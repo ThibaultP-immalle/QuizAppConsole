@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TijdVraag.cs" />
     <Compile Include="Vraag.cs" />
+    <Compile Include="Vragenlijst.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

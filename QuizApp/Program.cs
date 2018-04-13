@@ -10,37 +10,45 @@ namespace QuizApp
     {
         static void Main(string[] args)
         {
-            var vragen = new List<Vraag>()
-            {
-                new Vraag { Inhoud = "Hoeveel is 1 + 1?", CorrectAntwoord = "2" },
-                new Vraag { Inhoud = "Hoeveel is 2 * 3?", CorrectAntwoord = "6" }
-            };
+            //var vragen = new List<Vraag>()
+            //{
+            //    new Vraag { Inhoud = "Hoeveel is 1 + 1?", CorrectAntwoord = "2" },
+            //    new Vraag { Inhoud = "Hoeveel is 2 * 3?", CorrectAntwoord = "6" }
+            //};
 
-            foreach(var vraag in vragen)
-            {
-                vraag.StelVraag();
-            }
+            //Refactor:
+            Vragenlijst v1 = new Vragenlijst();
+            v1.VoegVraagToe(new Vraag { Inhoud = "Hoeveel is 1 + 1?", CorrectAntwoord = "2" });
+            v1.VoegVraagToe(new Vraag { Inhoud = "Hoeveel is 2 * 3?", CorrectAntwoord = "6" });
 
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("Resultaat");
-            Console.WriteLine("---------");
-            Console.WriteLine();
-            foreach(var vraag in vragen)
-            {
-                if(vraag.Check())
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write(vraag.Inhoud);
-                    Console.WriteLine("\t\tCorrect!");
-                } else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(vraag.Inhoud);
-                    Console.WriteLine("\t\tFout: [{0}]", vraag.CorrectAntwoord);
-                }
-            }
-            Console.ResetColor();
+            v1.Start();
+            v1.PrintRapport();
+
+            //foreach(var vraag in vragen)
+            //{
+            //    vraag.StelVraag();
+            //}
+
+            //Console.WriteLine();
+            //Console.ForegroundColor = ConsoleColor.DarkGreen;
+            //Console.WriteLine("Resultaat");
+            //Console.WriteLine("---------");
+            //Console.WriteLine();
+            //foreach(var vraag in vragen)
+            //{
+            //    if(vraag.Check())
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Green;
+            //        Console.Write(vraag.Inhoud);
+            //        Console.WriteLine("\t\tCorrect!");
+            //    } else
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.Write(vraag.Inhoud);
+            //        Console.WriteLine("\t\tFout: [{0}]", vraag.CorrectAntwoord);
+            //    }
+            //}
+            //Console.ResetColor();
         }
     }
 }
